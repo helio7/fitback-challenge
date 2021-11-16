@@ -14,6 +14,16 @@ mediaType: application/json
         minLength: 3
         type: string
         example: "Red Hot Chili"
+      limit:
+        description: "The number of songs that will return the request."
+        required: false
+        type: number
+        example: 25
+      offset:
+        description: "The index value of the first element that will be returned."
+        required: false
+        type: number
+        example: 5
     responses:
       200:
         body:
@@ -29,7 +39,12 @@ mediaType: application/json
                     "songId": "1TuxZ7JU323uw46aR7qd6V",
                     "songTitle": "Otherside"
                   }
-                ]
+                ],
+                "total": 2,
+                "limit": 20,
+                "offset": 0,
+                "previousPage": null,
+                "nextPage": null
               }
   /{songId}:
     description: Song entity
